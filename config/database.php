@@ -5,7 +5,6 @@ class Database {
     private $password = "";
     private $database = "employee_management_system";
     public $conn;
-
     public function getConnection() {
         $this->conn = null;
         try {

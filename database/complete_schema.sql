@@ -1,6 +1,5 @@
 CREATE DATABASE IF NOT EXISTS employee_management_system;
 USE employee_management_system;
-
 CREATE TABLE employees (
     emp_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
@@ -19,7 +18,6 @@ CREATE TABLE employees (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
-
 CREATE TABLE attendance (
     attendance_id INT PRIMARY KEY AUTO_INCREMENT,
     emp_id INT NOT NULL,
@@ -30,7 +28,6 @@ CREATE TABLE attendance (
     remarks TEXT,
     FOREIGN KEY (emp_id) REFERENCES employees(emp_id) ON DELETE CASCADE
 );
-
 CREATE TABLE leave_requests (
     leave_id INT PRIMARY KEY AUTO_INCREMENT,
     emp_id INT NOT NULL,
@@ -42,7 +39,6 @@ CREATE TABLE leave_requests (
     approved_by INT,
     FOREIGN KEY (emp_id) REFERENCES employees(emp_id) ON DELETE CASCADE
 );
-
 CREATE TABLE payroll (
     payroll_id INT PRIMARY KEY AUTO_INCREMENT,
     emp_id INT NOT NULL,
